@@ -1,0 +1,27 @@
+﻿@if (Session["IsLoggedIn"] != null)
+{
+    if (Session["IsLoggedIn"].Equals(1))
+    {
+        <label>@Session["IsLoggedIn"].ToString()</label>
+        <ul class="nav navbar-nav navbar-right">
+            <li>@Html.ActionLink("Log off", "Login", "Users", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        </ul>
+    }
+    else
+    {
+        <ul class="nav navbar-nav navbar-right">
+            <li>@Html.ActionLink("Log in", "Login", "Users", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        </ul>
+    }
+
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Log in", "Login", "Users", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}
+
+
+
+
